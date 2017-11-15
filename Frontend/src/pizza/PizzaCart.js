@@ -75,7 +75,7 @@ function initialiseCart() {
     //Фукнція віпрацьвуватиме при завантаженні сторінки
     //Тут можна наприклад, зчитати вміст корзини який збережено в Local Storage то показати його
     //TODO: ...
-    getFromStorage();
+    Cart = getFromStorage();
     updateCart();
 }
 
@@ -127,11 +127,11 @@ function updateCart() {
         $cart.prepend($node);
     }
 
+    setToStorage();
     emptyCart();
     updateOrders();
     genSum();
     Cart.forEach(showOnePizzaInCart);
-    setToStorage();
 }
 
 function updateOrders() {
@@ -167,7 +167,7 @@ function genSum() {
     for (var i = 0; i < Cart.length; i++) {
         sum += Cart[i].price;
     }
-    if (sum != 0) {
+    if (sum !== 0) {
         var html_code = Templates.GeneralSum();
         var $node = $(html_code);
         $node.find('#bottom-h3').text(sum + " грн");
@@ -177,11 +177,15 @@ function genSum() {
 
 function setToStorage() {
     orders = getPizzaInCart();
+    if (orders === null) {
+        orders = [];
+    }
     Storage.set('cart', orders);
 }
 
 function getFromStorage() {
     Cart = Storage.get('cart');
+    return Cart;
 }
 
 exports.removeFromCart = removeFromCart;
@@ -190,5 +194,6 @@ exports.addToCart = addToCart;
 exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
 exports.updateOrders = updateOrders;
+exports.getFromStorage = getFromStorage;
 
 exports.PizzaSize = PizzaSize;

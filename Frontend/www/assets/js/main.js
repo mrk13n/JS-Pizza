@@ -240,17 +240,17 @@ exports.PizzaMenu_OneItem = ejs.compile("<%\n\nfunction getIngredientsArray(pizz
 
 exports.PizzaCart_OneItem = ejs.compile("<% if (size == 'big_size') {\n    var s = 'Велика'\n} else {\n    s = 'Мала'\n} %>\n<div class=\"thumbnail item\">\n    <div class=\"row left-part\">\n        <div class=\"col-xs-12 name\">\n            <h4 class=\"main-h4\"><%= pizza.title %> (<%= s %>)</h4>\n        </div>\n        <div class=\"col-xs-12 type\">\n            <img src=\"assets/images/size-icon.svg\">\n            <h6 class=\"main-size-h6\"><%= pizza[size].size %></h6>\n            <img src=\"assets/images/weight.svg\">\n            <h6 class=\"main-weight-h6\"><%= pizza[size].weight %></h6>\n        </div>\n        <div class=\"col-xs-12\">\n            <span class=\"price\"><%= price %></span>\n            <span class=\"btn btn-danger btn-xs minus\"><span class=\"glyphicon glyphicon-minus\"></span></span>\n            <span class=\"count\"><%= quantity %></span>\n            <span class=\"btn btn-success btn-xs plus\"><span class=\"glyphicon glyphicon-plus\"></span></span>\n            <span class=\"btn btn-default btn-xs remove\"><span class=\"glyphicon glyphicon-remove\"></span></span>\n        </div>\n    </div>\n    <img class=\"img-circle\" src=\"<%= pizza.icon%>\">\n</div>");
 
-exports.Orders = ejs.compile("<div class=\"row\">\r\n    <div class=\"col-xs-7\">\r\n        <h3 id=\"top-h3\">Замовлення <span class=\"badge oval\"></span> </h3>\r\n    </div>\r\n    <div class=\"col-xs-5\">\r\n        <p id=\"top-p\">Очистити замовлення</p>\r\n    </div>\r\n</div>");
+exports.Orders = ejs.compile("<div class=\"row\">\n    <div class=\"col-xs-7\">\n        <h3 id=\"top-h3\">Замовлення <span class=\"badge oval\"></span> </h3>\n    </div>\n    <div class=\"col-xs-5\">\n        <p id=\"top-p\">Очистити замовлення</p>\n    </div>\n</div>");
 
-exports.EmptyCart = ejs.compile("<div class=\"empty_cart\">\r\n    <h5>Пусто в холодильнику?</h5>\r\n    <h5>Замовте піцу!</h5>\r\n</div>");
+exports.EmptyCart = ejs.compile("<div class=\"empty_cart\">\n    <h5>Пусто в холодильнику?</h5>\n    <h5>Замовте піцу!</h5>\n</div>");
 
-exports.GeneralSum = ejs.compile("<div class=\"col-xs-7\">\r\n    <h4 id=\"bottom-h4\">Сума замовлення</h4>\r\n</div>\r\n<div class=\"col-xs-5\">\r\n    <h3 id=\"bottom-h3\"></h3>\r\n</div>");
+exports.GeneralSum = ejs.compile("<div class=\"col-xs-7\">\n    <h4 id=\"bottom-h4\">Сума замовлення</h4>\n</div>\n<div class=\"col-xs-5\">\n    <h3 id=\"bottom-h3\"></h3>\n</div>");
 
 exports.PizzaCount = ejs.compile("<span class=\"badge oval\"><%= pizza.length%></span>");
 
 exports.PizzaName = ejs.compile("<h2 class=\"menu-name\"><%= pizza.title_name%></h2>");
 
-exports.PizzaMenu = ejs.compile("<ul class=\"nav nav-pills types\">\r\n    <% if (pizza.is_active === 'all') { %>\r\n    <li class=\"active all\"><a href=\"#\">Усі</a></li>\r\n    <% } else { %>\r\n    <li class=\"all\"><a href=\"#\">Усі</a></li>\r\n    <% } %>\r\n    <% if (pizza.is_active === 'meat') { %>\r\n    <li class=\"active meat\"><a href=\"#\">М'ясні</a></li>\r\n    <% } else { %>\r\n    <li class=\"meat\"><a href=\"#\">М'ясні</a></li>\r\n    <% } %>\r\n    <% if (pizza.is_active === 'pineapple') { %>\r\n    <li class=\"active pineapple\"><a href=\"#\">З ананасами</a></li>\r\n    <% } else { %>\r\n    <li class=\"pineapple\"><a href=\"#\">З ананасами</a></li>\r\n    <% } %>\r\n    <% if (pizza.is_active === 'mushroom') { %>\r\n    <li class=\"active mushroom\"><a href=\"#\">З грибами</a></li>\r\n    <% } else { %>\r\n    <li class=\"mushroom\"><a href=\"#\">З грибами</a></li>\r\n    <% } %>\r\n    <% if (pizza.is_active === 'ocean') { %>\r\n    <li class=\"active ocean\"><a href=\"#\">З морепродуктами</a></li>\r\n    <% } else { %>\r\n    <li class=\"ocean\"><a href=\"#\">З морепродуктами</a></li>\r\n    <% } %>\r\n    <% if (pizza.is_active === 'vega') { %>\r\n    <li class=\"active vega\"><a href=\"#\">Вега</a></li>\r\n    <% } else { %>\r\n    <li class=\"vega\"><a href=\"#\">Вега</a></li>\r\n    <% } %>\r\n</ul>");
+exports.PizzaMenu = ejs.compile("<ul class=\"nav nav-pills types\">\n    <% if (pizza.is_active === 'all') { %>\n    <li class=\"active all\"><a href=\"#\">Усі</a></li>\n    <% } else { %>\n    <li class=\"all\"><a href=\"#\">Усі</a></li>\n    <% } %>\n    <% if (pizza.is_active === 'meat') { %>\n    <li class=\"active meat\"><a href=\"#\">М'ясні</a></li>\n    <% } else { %>\n    <li class=\"meat\"><a href=\"#\">М'ясні</a></li>\n    <% } %>\n    <% if (pizza.is_active === 'pineapple') { %>\n    <li class=\"active pineapple\"><a href=\"#\">З ананасами</a></li>\n    <% } else { %>\n    <li class=\"pineapple\"><a href=\"#\">З ананасами</a></li>\n    <% } %>\n    <% if (pizza.is_active === 'mushroom') { %>\n    <li class=\"active mushroom\"><a href=\"#\">З грибами</a></li>\n    <% } else { %>\n    <li class=\"mushroom\"><a href=\"#\">З грибами</a></li>\n    <% } %>\n    <% if (pizza.is_active === 'ocean') { %>\n    <li class=\"active ocean\"><a href=\"#\">З морепродуктами</a></li>\n    <% } else { %>\n    <li class=\"ocean\"><a href=\"#\">З морепродуктами</a></li>\n    <% } %>\n    <% if (pizza.is_active === 'vega') { %>\n    <li class=\"active vega\"><a href=\"#\">Вега</a></li>\n    <% } else { %>\n    <li class=\"vega\"><a href=\"#\">Вега</a></li>\n    <% } %>\n</ul>");
 },{"ejs":10}],5:[function(require,module,exports){
 /**
  * Created by chaika on 25.01.16.
@@ -1035,12 +1035,12 @@ var _DEFAULT_DELIMITER = '%';
 var _DEFAULT_LOCALS_NAME = 'locals';
 var _NAME = 'ejs';
 var _REGEX_STRING = '(<%%|%%>|<%=|<%-|<%_|<%#|<%|%>|-%>|_%>)';
-var _OPTS = ['delimiter', 'scope', 'context', 'debug', 'compileDebug',
+var _OPTS_PASSABLE_WITH_DATA = ['delimiter', 'scope', 'context', 'debug', 'compileDebug',
   'client', '_with', 'rmWhitespace', 'strict', 'filename'];
-// We don't allow 'cache' option to be passed in the data obj
-// for the normal `render` call, but this is where Express puts it
+// We don't allow 'cache' option to be passed in the data obj for
+// the normal `render` call, but this is where Express 2 & 3 put it
 // so we make an exception for `renderFile`
-var _OPTS_EXPRESS = _OPTS.concat('cache');
+var _OPTS_PASSABLE_WITH_DATA_EXPRESS = _OPTS_PASSABLE_WITH_DATA.concat('cache');
 var _BOM = /^\uFEFF/;
 
 /**
@@ -1073,6 +1073,16 @@ exports.fileLoader = fs.readFileSync;
  */
 
 exports.localsName = _DEFAULT_LOCALS_NAME;
+
+/**
+ * Promise implementation -- defaults to the native implementation if available
+ * This is mostly just for testability
+ *
+ * @type {Function}
+ * @public
+ */
+
+exports.promiseImpl = (new Function('return this;'))().Promise;
 
 /**
  * Get the path to the included file from the parent file path and the
@@ -1130,7 +1140,8 @@ function getIncludePath(path, options) {
       }
     }
     if (!includePath) {
-      throw new Error('Could not find include include file.');
+      throw new Error('Could not find the include file "' +
+          options.escapeFunction(path) + '"');
     }
   }
   return includePath;
@@ -1200,13 +1211,32 @@ function handleCache(options, template) {
 
 function tryHandleCache(options, data, cb) {
   var result;
-  try {
-    result = handleCache(options)(data);
+  if (!cb) {
+    if (typeof exports.promiseImpl == 'function') {
+      return new exports.promiseImpl(function (resolve, reject) {
+        try {
+          result = handleCache(options)(data);
+          resolve(result);
+        }
+        catch (err) {
+          reject(err);
+        }
+      });
+    }
+    else {
+      throw new Error('Please provide a callback function');
+    }
   }
-  catch (err) {
-    return cb(err);
+  else {
+    try {
+      result = handleCache(options)(data);
+    }
+    catch (err) {
+      return cb(err);
+    }
+
+    cb(null, result);
   }
-  return cb(null, result);
 }
 
 /**
@@ -1359,7 +1389,7 @@ exports.render = function (template, d, o) {
   // No options object -- if there are optiony names
   // in the data, copy them to options
   if (arguments.length == 2) {
-    utils.shallowCopyFromList(opts, data, _OPTS);
+    utils.shallowCopyFromList(opts, data, _OPTS_PASSABLE_WITH_DATA);
   }
 
   return handleCache(opts, template)(data);
@@ -1379,36 +1409,49 @@ exports.render = function (template, d, o) {
  */
 
 exports.renderFile = function () {
-  var filename = arguments[0];
-  var cb = arguments[arguments.length - 1];
+  var args = Array.prototype.slice.call(arguments);
+  var filename = args.shift();
+  var cb;
   var opts = {filename: filename};
   var data;
+  var viewOpts;
 
-  if (arguments.length > 2) {
-    data = arguments[1];
-
-    // No options object -- if there are optiony names
-    // in the data, copy them to options
-    if (arguments.length === 3) {
-      // Express 4
+  // Do we have a callback?
+  if (typeof arguments[arguments.length - 1] == 'function') {
+    cb = args.pop();
+  }
+  // Do we have data/opts?
+  if (args.length) {
+    // Should always have data obj
+    data = args.shift();
+    // Normal passed opts (data obj + opts obj)
+    if (args.length) {
+      // Use shallowCopy so we don't pollute passed in opts obj with new vals
+      utils.shallowCopy(opts, args.pop());
+    }
+    // Special casing for Express (settings + opts-in-data)
+    else {
+      // Express 3 and 4
       if (data.settings) {
-        if (data.settings['view options']) {
-          utils.shallowCopyFromList(opts, data.settings['view options'], _OPTS_EXPRESS);
-        }
+        // Pull a few things from known locations
         if (data.settings.views) {
           opts.views = data.settings.views;
         }
+        if (data.settings['view cache']) {
+          opts.cache = true;
+        }
+        // Undocumented after Express 2, but still usable, esp. for
+        // items that are unsafe to be passed along with data, like `root`
+        viewOpts = data.settings['view options'];
+        if (viewOpts) {
+          utils.shallowCopy(opts, viewOpts);
+        }
       }
-      // Express 3 and lower
-      else {
-        utils.shallowCopyFromList(opts, data, _OPTS_EXPRESS);
-      }
+      // Express 2 and lower, values set in app.locals, or people who just
+      // want to pass options in their data. NOTE: These values will override
+      // anything previously set in settings  or settings['view options']
+      utils.shallowCopyFromList(opts, data, _OPTS_PASSABLE_WITH_DATA_EXPRESS);
     }
-    else {
-      // Use shallowCopy so we don't pollute passed in opts obj with new vals
-      utils.shallowCopy(opts, arguments[2]);
-    }
-
     opts.filename = filename;
   }
   else {
@@ -1499,14 +1542,14 @@ Template.prototype = {
 
     if (opts.compileDebug) {
       src = 'var __line = 1' + '\n'
-          + '  , __lines = ' + JSON.stringify(this.templateText) + '\n'
-          + '  , __filename = ' + (opts.filename ?
-                JSON.stringify(opts.filename) : 'undefined') + ';' + '\n'
-          + 'try {' + '\n'
-          + this.source
-          + '} catch (e) {' + '\n'
-          + '  rethrow(e, __lines, __filename, __line, escapeFn);' + '\n'
-          + '}' + '\n';
+        + '  , __lines = ' + JSON.stringify(this.templateText) + '\n'
+        + '  , __filename = ' + (opts.filename ?
+        JSON.stringify(opts.filename) : 'undefined') + ';' + '\n'
+        + 'try {' + '\n'
+        + this.source
+        + '} catch (e) {' + '\n'
+        + '  rethrow(e, __lines, __filename, __line, escapeFn);' + '\n'
+        + '}' + '\n';
     }
     else {
       src = this.source;
@@ -1626,7 +1669,7 @@ Template.prototype = {
             }
             self.source += includeSrc;
             self.dependencies.push(exports.resolveInclude(include[1],
-                includeOpts.filename));
+              includeOpts.filename));
             return;
           }
         }
@@ -1735,9 +1778,9 @@ Template.prototype = {
       this.truncate = line.indexOf('-') === 0 || line.indexOf('_') === 0;
       break;
     default:
-        // In script mode, depends on type of tag
+      // In script mode, depends on type of tag
       if (this.mode) {
-          // If '//' is found without a line break, add a line break.
+        // If '//' is found without a line break, add a line break.
         switch (this.mode) {
         case Template.modes.EVAL:
         case Template.modes.ESCAPED:
@@ -1747,28 +1790,28 @@ Template.prototype = {
           }
         }
         switch (this.mode) {
-            // Just executing code
+        // Just executing code
         case Template.modes.EVAL:
           this.source += '    ; ' + line + '\n';
           break;
-            // Exec, esc, and output
+          // Exec, esc, and output
         case Template.modes.ESCAPED:
           this.source += '    ; __append(escapeFn(' + stripSemi(line) + '))' + '\n';
           break;
-            // Exec and output
+          // Exec and output
         case Template.modes.RAW:
           this.source += '    ; __append(' + stripSemi(line) + ')' + '\n';
           break;
         case Template.modes.COMMENT:
-              // Do nothing
+          // Do nothing
           break;
-            // Literal <%% mode, append as raw output
+          // Literal <%% mode, append as raw output
         case Template.modes.LITERAL:
           this._addOutput(line);
           break;
         }
       }
-        // In string mode, just add the output
+      // In string mode, just add the output
       else {
         this._addOutput(line);
       }
@@ -1900,7 +1943,7 @@ var _ENCODE_HTML_RULES = {
   '"': '&#34;',
   "'": '&#39;'
 };
-var _MATCH_HTML = /[&<>\'"]/g;
+var _MATCH_HTML = /[&<>'"]/g;
 
 function encode_char(c) {
   return _ENCODE_HTML_RULES[c] || c;
@@ -1944,7 +1987,7 @@ exports.escapeXML = function (markup) {
   return markup == undefined
     ? ''
     : String(markup)
-        .replace(_MATCH_HTML, encode_char);
+      .replace(_MATCH_HTML, encode_char);
 };
 exports.escapeXML.toString = function () {
   return Function.prototype.toString.call(this) + ';\n' + escapeFuncStr;
@@ -2014,53 +2057,29 @@ exports.cache = {
 
 },{}],12:[function(require,module,exports){
 module.exports={
-  "_args": [
-    [
-      {
-        "raw": "ejs@^2.5.7",
-        "scope": null,
-        "escapedName": "ejs",
-        "name": "ejs",
-        "rawSpec": "^2.5.7",
-        "spec": ">=2.5.7 <3.0.0",
-        "type": "range"
-      },
-      "D:\\NIT GitHub\\JS-Pizza"
-    ]
-  ],
-  "_from": "ejs@>=2.5.7 <3.0.0",
-  "_id": "ejs@2.5.7",
-  "_inCache": true,
+  "_from": "ejs@^2.4.1",
+  "_id": "ejs@2.5.9",
+  "_inBundle": false,
+  "_integrity": "sha512-GJCAeDBKfREgkBtgrYSf9hQy9kTb3helv0zGdzqhM7iAkW8FA/ZF97VQDbwFiwIT8MQLLOe5VlPZOEvZAqtUAQ==",
   "_location": "/ejs",
-  "_nodeVersion": "6.9.1",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/ejs-2.5.7.tgz_1501385411193_0.3807816591579467"
-  },
-  "_npmUser": {
-    "name": "mde",
-    "email": "mde@fleegix.org"
-  },
-  "_npmVersion": "3.10.8",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "ejs@^2.5.7",
-    "scope": null,
-    "escapedName": "ejs",
+    "type": "range",
+    "registry": true,
+    "raw": "ejs@^2.4.1",
     "name": "ejs",
-    "rawSpec": "^2.5.7",
-    "spec": ">=2.5.7 <3.0.0",
-    "type": "range"
+    "escapedName": "ejs",
+    "rawSpec": "^2.4.1",
+    "saveSpec": null,
+    "fetchSpec": "^2.4.1"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/ejs/-/ejs-2.5.7.tgz",
-  "_shasum": "cc872c168880ae3c7189762fd5ffc00896c9518a",
-  "_shrinkwrap": null,
-  "_spec": "ejs@^2.5.7",
-  "_where": "D:\\NIT GitHub\\JS-Pizza",
+  "_resolved": "https://registry.npmjs.org/ejs/-/ejs-2.5.9.tgz",
+  "_shasum": "7ba254582a560d267437109a68354112475b0ce5",
+  "_spec": "ejs@^2.4.1",
+  "_where": "/home/mrk13/Documents/GitHub/JS-Pizza",
   "author": {
     "name": "Matthew Eernisse",
     "email": "mde@fleegix.org",
@@ -2069,6 +2088,7 @@ module.exports={
   "bugs": {
     "url": "https://github.com/mde/ejs/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Timothy Gu",
@@ -2077,22 +2097,18 @@ module.exports={
     }
   ],
   "dependencies": {},
+  "deprecated": false,
   "description": "Embedded JavaScript templates",
   "devDependencies": {
-    "browserify": "^13.0.1",
-    "eslint": "^3.0.0",
+    "browserify": "^13.1.1",
+    "eslint": "^4.14.0",
     "git-directory-deploy": "^1.5.1",
     "istanbul": "~0.4.3",
-    "jake": "^8.0.0",
+    "jake": "^8.0.16",
     "jsdoc": "^3.4.0",
     "lru-cache": "^4.0.1",
-    "mocha": "^3.0.2",
-    "uglify-js": "^2.6.2"
-  },
-  "directories": {},
-  "dist": {
-    "shasum": "cc872c168880ae3c7189762fd5ffc00896c9518a",
-    "tarball": "https://registry.npmjs.org/ejs/-/ejs-2.5.7.tgz"
+    "mocha": "^5.0.5",
+    "uglify-js": "^3.3.16"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -2105,15 +2121,7 @@ module.exports={
   ],
   "license": "Apache-2.0",
   "main": "./lib/ejs.js",
-  "maintainers": [
-    {
-      "name": "mde",
-      "email": "mde@fleegix.org"
-    }
-  ],
   "name": "ejs",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git://github.com/mde/ejs.git"
@@ -2125,7 +2133,7 @@ module.exports={
     "lint": "eslint \"**/*.js\" Jakefile",
     "test": "jake test"
   },
-  "version": "2.5.7"
+  "version": "2.5.9"
 }
 
 },{}],13:[function(require,module,exports){
